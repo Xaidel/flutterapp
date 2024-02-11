@@ -4,6 +4,7 @@ import 'bodytitle.dart';
 import 'inputfield.dart';
 import 'signupbutton.dart';
 
+// ignore: must_be_immutable
 class BodyContainer extends StatelessWidget {
   bool? isChecked;
   BodyContainer({super.key});
