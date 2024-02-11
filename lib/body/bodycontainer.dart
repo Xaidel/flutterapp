@@ -5,14 +5,15 @@ import 'inputfield.dart';
 import 'signupbutton.dart';
 
 class BodyContainer extends StatelessWidget {
-  const BodyContainer({super.key});
+  bool? isChecked;
+  BodyContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
     InputField field1 =
         InputField.createInstanceField("FULL NAME", "Enter your Full Name");
-    InputField field2 =
-        InputField.createInstanceField("USERNAME", "Enter your Username");
+    InputField field2 = InputField.createInstanceField(
+        "EMAIL ADDRESS", "Enter your Email Address");
     InputField field3 = InputField.createInstanceField(
         "PASSWORD", "Enter your Password",
         ot: true);
@@ -36,11 +37,20 @@ class BodyContainer extends StatelessWidget {
                   const BodyTitle(),
                   Column(
                     children: [
-                      field1.build(context),
-                      field2.build(context),
-                      field3.build(context),
-                      const CBox(),
-                      const SignUpButton(),
+                      field1,
+                      field2,
+                      field3,
+                      CBox(),
+                      SignUpButton(onPressed: () {
+                        if (field1.formKey != null &&
+                            field1.formKey!.currentState!.validate()) {}
+                        if (field2.formKey != null &&
+                            field2.formKey!.currentState!.validate()) {}
+                        if (field3.formKey!.currentState!.validate()) {}
+                        if (isChecked ?? false) {
+                          debugPrint("Pls Accept");
+                        }
+                      }),
                     ],
                   ),
                 ],

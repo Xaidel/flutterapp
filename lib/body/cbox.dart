@@ -22,7 +22,6 @@ class _CBoxState extends State<CBox> {
       margin: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Column(
         children: [
-          const SizedBox(height: 10.0),
           Row(
             children: [
               Checkbox(
