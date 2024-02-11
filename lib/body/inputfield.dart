@@ -57,7 +57,6 @@ class InputField extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 10.0),
         ],
       ),
     );

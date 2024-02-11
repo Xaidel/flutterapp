@@ -20,28 +20,34 @@ class _CBoxState extends State<CBox> {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 30.0),
-      child: Row(
+      child: Column(
         children: [
-          Checkbox(
-            fillColor:
-                MaterialStateProperty.resolveWith((states) => getColor()),
-            side: const BorderSide(
-              color: Color(0xffF55D5C),
-            ),
-            checkColor: Colors.white,
-            value: isChecked,
-            onChanged: (bool? value) => setState(() {
-              isChecked = value;
-            }),
+          const SizedBox(height: 10.0),
+          Row(
+            children: [
+              Checkbox(
+                fillColor:
+                    MaterialStateProperty.resolveWith((states) => getColor()),
+                side: const BorderSide(
+                  color: Color(0xffF55D5C),
+                ),
+                checkColor: Colors.white,
+                value: isChecked,
+                onChanged: (bool? value) => setState(() {
+                  isChecked = value;
+                }),
+              ),
+              Text(
+                "Agree to Terms and Conditions",
+                style: TextStyle(
+                  color: Colors.grey.shade700,
+                  fontFamily: "DMSans-Light",
+                  fontSize: 12.0,
+                ),
+              ),
+            ],
           ),
-          Text(
-            "Agree to Terms and Conditions",
-            style: TextStyle(
-              color: Colors.grey.shade700,
-              fontFamily: "DMSans-Light",
-              fontSize: 12.0,
-            ),
-          ),
+          const SizedBox(height: 10.0),
         ],
       ),
     );
