@@ -5,15 +5,19 @@ import 'package:flutter/material.dart';
 class InputField extends StatelessWidget {
   String? _fieldLabel;
   String? _fieldHint;
+  bool? _obscureText;
 
   InputField({super.key});
 
   set fieldLabel(String? fieldLabel) => _fieldLabel = fieldLabel;
   set fieldHint(String? fieldHint) => _fieldHint = fieldHint;
+  set obscureText(bool? obsureText) => _obscureText = obsureText;
 
-  InputField.createInstanceField(String? fl, String? fh, {super.key}) {
+  InputField.createInstanceField(String? fl, String? fh,
+      {super.key, bool? ot}) {
     fieldLabel = fl;
     fieldHint = fh;
+    obscureText = ot;
   }
 
   @override
@@ -34,6 +38,7 @@ class InputField extends StatelessWidget {
           ),
           const SizedBox(height: 10.0),
           TextField(
+            obscureText: _obscureText ?? false,
             decoration: InputDecoration(
               hintText: '$_fieldHint',
               hintStyle: const TextStyle(

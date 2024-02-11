@@ -13,37 +13,40 @@ class BodyContainer extends StatelessWidget {
         InputField.createInstanceField("FULL NAME", "Enter your Full Name");
     InputField field2 =
         InputField.createInstanceField("USERNAME", "Enter your Username");
-    InputField field3 =
-        InputField.createInstanceField("PASSWORD", "Enter your Password");
-    return Container(
-      color: const Color(0xffF55D5C),
+    InputField field3 = InputField.createInstanceField(
+        "PASSWORD", "Enter your Password",
+        ot: true);
+    return SingleChildScrollView(
       child: Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(100.0),
-          ),
-          color: Colors.white,
-        ),
-        padding: const EdgeInsets.all(20.0),
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Column(
-              children: [
-                const BodyTitle(),
-                Column(
-                  children: [
-                    field1.build(context),
-                    field2.build(context),
-                    field3.build(context),
-                    const CBox(),
-                    const SignUpButton(),
-                  ],
-                ),
-              ],
+        color: const Color(0xffF55D5C),
+        child: Container(
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(100.0),
             ),
-          ],
+            color: Colors.white,
+          ),
+          padding: const EdgeInsets.all(20.0),
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  const BodyTitle(),
+                  Column(
+                    children: [
+                      field1.build(context),
+                      field2.build(context),
+                      field3.build(context),
+                      const CBox(),
+                      const SignUpButton(),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

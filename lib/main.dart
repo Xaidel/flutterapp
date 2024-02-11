@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         appBar: TitleBar(),
-        body: SingleChildScrollView(child: BodyContainer()),
+        body: BodyContainer(),
       ),
     );
   }
