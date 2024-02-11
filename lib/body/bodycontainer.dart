@@ -38,7 +38,7 @@ class BodyContainer extends StatelessWidget {
                     field2.build(context),
                     field3.build(context),
                     const CBox(),
-                    SignUpButton(),
+                    const SignUpButton(),
                   ],
                 ),
               ],
