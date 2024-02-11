@@ -100,6 +100,7 @@ class _InputFieldState extends State<InputField> {
     if (!regex.hasMatch(value)) {
       return "Is that a valid Full Name?";
     }
+    return null;
   }
 
   String? validateEmail(String? value) {
@@ -110,6 +111,7 @@ class _InputFieldState extends State<InputField> {
     if (!regex.hasMatch(value)) {
       return "Enter valid email address";
     }
+    return null;
   }
 
   String? validatePassword(String? value) {
@@ -120,5 +122,6 @@ class _InputFieldState extends State<InputField> {
     if (!regex.hasMatch(value)) {
       return "Enter a Strong Password";
     }
+    return null;
   }
 }
